@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\VerstaTest.Data\VerstaTest.Data.csproj" />
+    <ProjectReference Include="..\VerstaTest.Options\VerstaTest.Options.csproj" />
+  </ItemGroup>
+
+</Project>

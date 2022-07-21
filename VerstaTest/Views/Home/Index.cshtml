@@ -1,0 +1,47 @@
+﻿@using VerstaTest.ViewModels
+@model HomeViewModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="~/css/StyleHome.css" />
+</head>
+<body>
+    <div class="homePage">
+        <div class="newOrder">
+            @using (@Html.BeginForm("CreateNewOrder", "Home"))
+            {
+                <h5>AdressersCity</h5>
+                <input type="text" id="adressersCity" name="adressersCity" required/>
+                <h5>AdressersAdress</h5>
+                <input type="text" id="adressersAdress" name="adressersAdress" required/>
+                <h5>RecipientsCity</h5>
+                <input type="text" id="recipientsCity" name="recipientsCity" required/>
+                <h5>RecipientsAdress</h5>
+                <input type="text" id="recipientsAdress" name="recipientsAdress" required/>
+                <h5>CargoWeight</h5>
+                <input type="number" id="cargoWeight" name="cargoWeight" required/>
+                <h5>CollectionDate</h5>
+                <input type="date" id="cargoWeight" name="collectionDate" required/>
+                <input type="submit" value="Add" />
+            }
+        </div>
+        <div class="orders-table">
+            @{
+                if (@Model.Orders != null && @Model.Orders.Count() != 0)
+                {
+                    foreach (var item in @Model.Orders)
+                    {
+                        @Html.Partial("SingleOrderView",item)
+                        ;
+                    }
+                }
+                else
+                {
+                    <h1>Активных заказов нет</h1>
+                }
+            }
+        </div>
+    </div>
+</body>
+</html>
